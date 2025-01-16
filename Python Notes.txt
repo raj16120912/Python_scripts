@@ -1,0 +1,107 @@
+Certainly! Here are some Python modules that are frequently used in automation:
+
+os: For interacting with the operating system (e.g., file and directory operations).
+
+1. os.listdir('path') -> ls
+2. os.getcwd() -> pwd
+3. os.rename('old_name', 'new_name') -> mv 
+4. os.remove('file') -> rm
+5. os.makedirs('new_dir')
+6. os.walk('path') -> tree
+ 
+sys: For accessing system-specific parameters and functions.
+
+1. sys.agrv -> commandline arguments
+2. sys.exit() -> exit the python
+3. sys.path -> List of directories python searches for modules
+
+shutil: For high-level file operations like copying and moving files.
+
+1. shutil.copy('source','dest') -> copy file
+2. shutil.move('source', 'dest') -> move file
+3. shutil.rmtree('directory_to_delete') -> rm -rf dir
+4. shutil.copytree('source','dest') -> copy dir recursively
+
+subprocess: For running and managing subprocesses.
+
+1. subprocess.run(['ls', '-l']) -> run command
+2. subprocess.Popen(['ls', '-l']) ->Execute a child program in a new process.
+3. subprocess.call(['ls','-l']) -> Run a command and wait for it to complete.
+
+time: For time-related functions, such as delays.
+
+1. time.sleep(5) ->sleep 5s
+2. time.time() -> current time
+3. time.strftime('%Y-%m-%d %H:%M:%S') -> current time
+
+datetime: For manipulating dates and times.
+
+1. datetime.now() ->current date and time
+2. datetime.strptime(date_str,'%Y-%m-%d') -> Parse a string into a datetime object
+3. timedelta(days, seconds, microseconds) -> difference between 2 dates or time
+
+logging: For logging messages and tracking events.
+
+1. logging.basicConfig(level=logging.INFO) -> configure basic logging system
+2. logging.info('message')  -> log on info messages
+3. logging.error('message') -> log error messages
+4. logging.debug('message') -> log debug messages
+
+re: For working with regular expressions.
+
+1. 
+requests: For making HTTP requests.
+
+1. requests.get(url, params=None) -> Send a Get request
+2. requests.post(url, data=None, json=None) -> Send POST requests
+3. requests.put(url, data=None) -> Send POST requests
+4. requests.delete(url) -> Delete requests
+
+json: For working with JSON data.
+
+1. json.loads('{"key": "value"}') -> Parse a JSON String
+2. json.dumps({'key': 'value'}) -> Convert a Python object to a JSON string
+
+pandas: For data manipulation and analysis.
+
+import pandas as pd
+1. df = pd.read_csv('data.csv') -> Read csv file into dataframe
+2. df.to_csv('output.csv', index=False) -> Write a dataframe to a csv file
+3. print(df.head(5)) -> Return 1st n rows of a dataframe
+4. print(df.describe()) -> Generate descriptive statistics.
+
+selenium: For automating web browser interactions.
+
+from selenium import webdriver
+1. driver = webdrive.Chrome() -> Initialize a Chromium instance
+2. driver.get('https://www.example.com') -> Navigate to a URL
+3. element = driver.find_element_by_id('element_id') -> Find an element by it's ID
+4. element = driver.find_element_by_name('element_name') -> Find an element by it's name
+
+pyautogui: For controlling the mouse and keyboard.
+
+1. pyautogui.click(100, 200) ->  Click at the specified coordinates
+2. pyautogui.moveTo(100, 200) -> Move the mouse to the specified coordinates
+3. pyautogui.typewrite('Hello, world!') -> Type a message.
+4. screenshot = pyautogui.screenshot() -> Take a screenshot
+   screenshot.save('screenshot.png')
+
+schedule: For scheduling tasks.
+
+1. schedule.every(10).seconds.do(job) -> Run Job every 10 seconds
+2. schedule.every(5).minutes.do(job) -> Run job every 5 minutes
+3. schedule.run_pending() -> Run all pending scheduled jobs
+
+paramiko: For SSH and SFTP operations.
+
+1. import paramiko
+   ssh = paramiko.SSHCLient()
+   ssh.set_missing_host_key_policy(paramiko.AutoPolicy())
+   ssh.connect('hostname', username='user', password='password')   -> Connect to a SSH server
+2. stdin, stdout, stderr = ss.exec_command('ls -l') -> Execute a shell command
+   print(stdout.read().decode())
+3. sftp = ssh.open_sftp()
+   sftp.get('remote_path', 'local_path') -> Download file
+   sftp.put('local_path', 'remote_path') -> Upload file
+   sftp.close()
+   ssh.close()
