@@ -1,0 +1,1 @@
+RewriteRule ^/lists/dlxe.htm http://www.trellian.com%{ENV:ServerUrlSuffix}/ [R=301,L]
