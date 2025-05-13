@@ -48,8 +48,59 @@ logging: For logging messages and tracking events.
 4. logging.debug('message') -> log debug messages
 
 re: For working with regular expressions.
+Metacharacters
 
-1. 
+    .: Matches any character except a newline.
+    ^: Matches the start of the string.
+    $: Matches the end of the string.
+    *: Matches 0 or more repetitions.
+    +: Matches 1 or more repetitions.
+    ?: Matches 0 or 1 repetition.
+    {m}: Matches exactly m repetitions.
+    {m,n}: Matches between m and n repetitions.
+    []: Defines a character class.
+    |: Acts as an "or" operator.
+    (): Creates a capturing group.
+    `\`: Escapes special characters.
+
+Special Sequences
+
+    \d: Matches any digit (0-9).
+    \D: Matches any non-digit.
+    \s: Matches any whitespace character (space, tab, newline).
+    \S: Matches any non-whitespace character.
+    \w: Matches any word character (a-z, A-Z, 0-9, \_).
+    \W: Matches any non-word character.
+    \b: Matches a word boundary.
+    \A: Matches the start of the string.
+    \Z: Matches the end of the string.
+
+Sets
+
+    [abc]: Matches a, b, or c.
+    [a-z]: Matches any lowercase letter.
+    [A-Z]: Matches any uppercase letter.
+    [0-9]: Matches any digit.
+    [^abc]: Matches anything except a, b, or c.
+
+Flags
+
+    re.I or re.IGNORECASE: Ignore case.
+    re.M or re.MULTILINE: Make ^ and $ match start or end of any line.
+    re.S or re.DOTALL: Make . match any character, including newline.
+    re.L or re.LOCALE: Do a locale-aware match.
+    re.U or re.UNICODE: Match Unicode character properties.
+    re.X or re.VERBOSE: Enable verbose matching, which ignores whitespace and comments.
+
+Common Functions
+
+    re.search(pattern, string): Searches for the first occurrence of the pattern in the string.
+    re.match(pattern, string): Matches the pattern at the beginning of the string.
+    re.findall(pattern, string): Finds all occurrences of the pattern in the string.
+    re.sub(pattern, replace, string): Replaces all occurrences of the pattern in the string with replace.
+    re.split(pattern, string): Splits the string by the occurrences of the pattern.
+    re.compile(pattern): Compiles a regex pattern for reuse.
+
 requests: For making HTTP requests.
 
 1. requests.get(url, params=None) -> Send a Get request
